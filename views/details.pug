@@ -1,0 +1,13 @@
+extends home
+
+block content
+    .container
+        h1 #{user.first_name}
+        h1 #{user.last_name}
+        h1 #{user.id}
+        ul.list-group
+            li  Email : #{user.email}
+            li  Phone : #{user.phone}
+        a.btn.btn-default(href="/") Back
+        form(action="/user/delete/"+user.id+"?_method=DELETE" method="POST")
+            input.btn.btn-danger.pull-right(type="submit", value="Delete")

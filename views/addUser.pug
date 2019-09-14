@@ -1,0 +1,20 @@
+extends home 
+
+block content
+    form(method="POST" action="/user/add")
+        .form-group
+            label ID
+            input.form-control(type="text" name="id")
+        .form-group
+            label First Name
+            input.form-control(type="text" name="first_name")
+        .form-group
+            label Last Name
+            input.form-control(type="text" name="last_name")
+        .form-group
+            label Email
+            input.form-control(type="text" name="email")
+        .form-group
+            label Phone
+            input.form-control(type="text" name="phone")
+        input.form-control(type="submit" value="Save")

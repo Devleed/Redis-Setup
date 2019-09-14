@@ -1,0 +1,22 @@
+extends home
+
+block content
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.navbar-default
+      a.navbar-brand(href='#') Navbar
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='/user/add') Add Users
+        form.form-inline.my-2.my-lg-0(action="/user/search" method="POST")
+          input.form-control.mr-sm-2(type='text' name="id" placeholder='Search', aria-label='Search')
+          button.btn.btn-secondary.my-2.my-sm-0(type='submit') Search
+    if error
+      .container
+        span #{error}
+
